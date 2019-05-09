@@ -38,7 +38,7 @@ export class herald  extends EventEmitter {
 		function getExePath(extName) {
 			var strPath   = process.env['PATH']
 			console.log(strPath);
-			var nodePath  = strPath.split(';').filter((str) => {
+			var nodePath  = strPath.split(/[\;\:]/).filter((str) => {
 			  if (str.toLowerCase().indexOf(extName.toLowerCase()) > 0) {
 				return true;
 			  }
